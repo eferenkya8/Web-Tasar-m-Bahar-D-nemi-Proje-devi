@@ -18,6 +18,7 @@
         <li class="nav-item"><a class="nav-link active" href="index.php">Hakkında</a></li>
         <li class="nav-item"><a class="nav-link" href="cv.php">Özgeçmiş</a></li>
         <li class="nav-item"><a class="nav-link" href="sehrim.php">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.php">Mirasımız</a></li>
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.php">İlgi Alanlarım</a></li>
         <li class="nav-item"><a class="nav-link" href="iletisim.php">İletişim</a></li>
         <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
