@@ -45,8 +45,6 @@
             <h3 class="text-gs-red">Kuruluş ve Tarihçe</h3>
             <p class="border-gs ps-3">Galatasaray Spor Kulübü, 1905 yılında Ali Sami Yen ve arkadaşları tarafından, o zamanki adıyla Mekteb-i Sultani'de (Galatasaray Lisesi) kurulmuştur. "Türk olmayan takımları yenmek" hedefiyle yola çıkan kulüp, Türkiye'nin Avrupa'daki en başarılı temsilcisi olmuştur.</p>
         </div>
-
-        <!-- Sağ Taraf: Başarı Tablosu ve Liste -->
         <div class="col-lg-6">
             <h3 class="text-gs-red">Kulüp Bilgileri ve Başarılar</h3>
             <table class="table table-hover border shadow-sm">
