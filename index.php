@@ -31,7 +31,7 @@
     <section id="about" class="row">
         <div class="col-md-6">
             <h2>Merhaba, Ben Efe Eren Kaya</h2>
-            <p>Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. Bu web sitesini Web Teknolojileri dersi kapsamında geliştiriyorum.</p>
+            <p>18 yaşında Sakarya Üniversitesi Bilgisayar Mühendisliği 1. Sınıf öğrencisiyim. Bu web sitesini Web Teknolojileri dersi kapsamında geliştiriyorum.</p>
             <h3>Hobilerim</h3>
             <ul>
                 <li>Müzik Dinlemek</li>
