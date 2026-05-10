@@ -24,7 +24,6 @@
         <li class="nav-item"><a class="nav-link" href="mirasimiz.php">Mirasımız</a></li>
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.php">İlgi Alanlarım</a></li>
         <li class="nav-item"><a class="nav-link active" href="iletisim.php">İletişim</a></li>
-      </ul>
     </div>
   </div>
 </nav>
@@ -82,13 +81,10 @@ function validateForm() {
     const email = document.getElementById("email");
     const message = document.getElementById("message");
 
-    // Hata mesajlarını temizle
     document.querySelectorAll(".error-text").forEach(el => el.style.display = "none");
 
-    // Sadece harf ve boşluk kabul eden kural (Türkçe karakterler dahil)
     const alphaPattern = /^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]+$/;
 
-    // AD KONTROLÜ
     if (name.value.trim() === "") {
         document.getElementById("nameError").innerText = "Lütfen adınızı giriniz.";
         document.getElementById("nameError").style.display = "block";
@@ -99,7 +95,6 @@ function validateForm() {
         isValid = false;
     }
 
-    // SOYAD KONTROLÜ
     if (surname.value.trim() === "") {
         document.getElementById("surnameError").innerText = "Lütfen soyadınızı giriniz.";
         document.getElementById("surnameError").style.display = "block";
@@ -110,14 +105,12 @@ function validateForm() {
         isValid = false;
     }
 
-    // EMAIL KONTROLÜ
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email.value)) {
         document.getElementById("emailError").style.display = "block";
         isValid = false;
     }
 
-    // MESAJ KONTROLÜ
     if (message.value.trim() === "") {
         document.getElementById("messageError").style.display = "block";
         isValid = false;
