@@ -9,13 +9,17 @@
     <style>
         .contact-container { background: white; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); padding: 30px; }
         .error-text { color: #A32638; font-size: 0.85rem; display: none; }
+        .bg-dark-custom { background-color: #212529; }
     </style>
 </head>
 <body class="bg-light">
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Web Proje</a>
+    <a class="navbar-brand fw-bold" href="index.php">Web Proje</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="index.php">Hakkında</a></li>
@@ -24,44 +28,55 @@
         <li class="nav-item"><a class="nav-link" href="mirasimiz.php">Mirasımız</a></li>
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.php">İlgi Alanlarım</a></li>
         <li class="nav-item"><a class="nav-link active" href="iletisim.php">İletişim</a></li>
+      </ul>
+      <a href="login.php" class="btn btn-outline-light btn-sm">Giriş Yap</a>
     </div>
   </div>
 </nav>
 
-<main class="container my-5">
+<main class="container py-5">
     <div class="row justify-content-center">
-        <div class="col-md-8 contact-container">
-            <h2 class="text-center mb-4">Benimle İletişime Geçin</h2>
-            
-            <form id="contactForm" action="gonder.php" method="POST" onsubmit="return validateForm()">
-                <div class="row">
-                    <div class="col-md-6 mb-3">
+        <div class="col-md-8 contact-container" id="app"> <h2 class="text-center mb-4 fw-bold">İletişim Formu</h2>
+            <p class="text-center text-muted mb-5">Benimle İletişime Geçin</p>
+
+            <form id="contactForm" action="gonder.php" method="POST">
+                <div class="row g-3">
+                    <div class="col-md-6">
                         <label class="form-label">Adınız</label>
-                        <input type="text" class="form-control" id="name" name="name">
-                        <span id="nameError" class="error-text">Lütfen adınızı giriniz.</span>
+                        <input type="text" name="ad" class="form-control" placeholder="İsim...">
+                        <small id="nameError" class="error-text">İsim alanı hatalı!</small>
                     </div>
-                    <div class="col-md-6 mb-3">
+                    <div class="col-md-6">
                         <label class="form-label">Soyadınız</label>
-                        <input type="text" class="form-control" id="surname" name="surname">
-                        <span id="surnameError" class="error-text">Lütfen soyadınızı giriniz.</span>
+                        <input type="text" name="soyad" class="form-control" placeholder="Soyisim...">
+                        <small id="surnameError" class="error-text">Soyad alanı hatalı!</small>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">E-posta Adresiniz</label>
+                        <input type="email" name="email" class="form-control" placeholder="E-posta Adresiniz...">
+                        <small id="emailError" class="error-text">Geçersiz e-posta formatı!</small>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Mesajınız</label>
+                        <textarea name="mesaj" class="form-control" rows="4" placeholder="Mesajınızı buraya yazınız..."></textarea>
+                        <small id="messageError" class="error-text">Mesaj alanı boş bırakılamaz!</small>
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label class="form-label">E-posta Adresiniz</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                    <span id="emailError" class="error-text">Geçerli bir e-posta adresi giriniz.</span>
+                <div class="row mt-4 g-2">
+                    <div class="col-md-6">
+                        <button type="button" onclick="validateWithNativeJS()" class="btn btn-primary w-100 py-2">
+                            Native JS ile Kontrol Et & Gönder
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button type="button" @click="validateWithVue" class="btn btn-success w-100 py-2">
+                            Vue.js ile Kontrol Et & Gönder
+                        </button>
+                    </div>
                 </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Mesajınız</label>
-                    <textarea class="form-control" id="message" name="message" rows="4"></textarea>
-                    <span id="messageError" class="error-text">Mesaj alanı boş bırakılamaz.</span>
-                </div>
-
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-lg">Gönder</button>
-                    <button type="reset" class="btn btn-outline-secondary">Temizle</button>
+                <div class="text-center mt-3 text-muted small">
+                    * Her iki buton da form verilerini doğrular ve başarılıysa gonder.php'ye yönlendirir.
                 </div>
             </form>
         </div>
@@ -69,55 +84,57 @@
 </main>
 
 <footer class="bg-dark text-white text-center py-3 mt-5">
-    <p>&copy; 2026 Efe Eren Kaya - Web Teknolojileri Projesi</p>
+    <p class="mb-0">&copy; 2026 Efe Eren Kaya - Web Teknolojileri Projesi</p>
 </footer>
 
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
 <script>
-function validateForm() {
-    let isValid = true;
-    
-    const name = document.getElementById("name");
-    const surname = document.getElementById("surname");
-    const email = document.getElementById("email");
-    const message = document.getElementById("message");
+    const { createApp } = Vue;
+    createApp({
+        methods: {
+            validateWithVue() {
+                const form = document.getElementById('contactForm');
+                const ad = form.ad.value.trim();
+                const email = form.email.value.trim();
+                const mesaj = form.mesaj.value.trim();
 
-    document.querySelectorAll(".error-text").forEach(el => el.style.display = "none");
+                if (!ad || !email || !mesaj) {
+                    alert("VUE.JS UYARISI: Lütfen zorunlu alanları doldurun!");
+                } else if (!email.includes("@")) {
+                    alert("VUE.JS UYARISI: E-posta formatı hatalı!");
+                } else {
+                    alert("VUE.JS Kontrolü Başarılı! Form gönderiliyor...");
+                    form.submit();
+                }
+            }
+        }
+    }).mount('#app');
 
-    const alphaPattern = /^[a-zA-ZğüşıöçĞÜŞİÖÇ\s]+$/;
+    function validateWithNativeJS() {
+        const form = document.getElementById('contactForm');
+        let isValid = true;
 
-    if (name.value.trim() === "") {
-        document.getElementById("nameError").innerText = "Lütfen adınızı giriniz.";
-        document.getElementById("nameError").style.display = "block";
-        isValid = false;
-    } else if (!alphaPattern.test(name.value)) {
-        document.getElementById("nameError").innerText = "İsim sadece harflerden oluşmalıdır.";
-        document.getElementById("nameError").style.display = "block";
-        isValid = false;
+        document.querySelectorAll('.error-text').forEach(el => el.style.display = 'none');
+
+        if (form.ad.value.trim() === "") {
+            document.getElementById("nameError").style.display = "block";
+            isValid = false;
+        }
+        
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(form.email.value)) {
+            document.getElementById("emailError").style.display = "block";
+            isValid = false;
+        }
+
+        if (isValid) {
+            alert("NATIVE JS Kontrolü Başarılı! Form gönderiliyor...");
+            form.submit();
+        } else {
+            alert("NATIVE JS UYARISI: Lütfen formu eksiksiz doldurun!");
+        }
     }
-
-    if (surname.value.trim() === "") {
-        document.getElementById("surnameError").innerText = "Lütfen soyadınızı giriniz.";
-        document.getElementById("surnameError").style.display = "block";
-        isValid = false;
-    } else if (!alphaPattern.test(surname.value)) {
-        document.getElementById("surnameError").innerText = "Soyad sadece harflerden oluşmalıdır.";
-        document.getElementById("surnameError").style.display = "block";
-        isValid = false;
-    }
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value)) {
-        document.getElementById("emailError").style.display = "block";
-        isValid = false;
-    }
-
-    if (message.value.trim() === "") {
-        document.getElementById("messageError").style.display = "block";
-        isValid = false;
-    }
-
-    return isValid;
-}
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

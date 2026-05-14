@@ -38,13 +38,11 @@
                 <table class="table table-hover border">
                     <tbody class="align-middle">
                         <?php
-                        // Formdan gelen verileri POST metodu ile yakalıyoruz
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                            // htmlspecialchars: Güvenlik için (XSS engelleme)
-                            $ad = htmlspecialchars($_POST['name'] ?? 'Belirtilmedi');
-                            $soyad = htmlspecialchars($_POST['surname'] ?? 'Belirtilmedi');
-                            $email = htmlspecialchars($_POST['email'] ?? 'Belirtilmedi');
-                            $mesaj = htmlspecialchars($_POST['message'] ?? 'Belirtilmedi');
+                            $ad = $_POST['ad'] ?? 'Belirtilmedi';
+                            $soyad = $_POST['soyad'] ?? 'Belirtilmedi';
+                            $email = $_POST['email'] ?? 'Belirtilmedi';
+                            $mesaj = $_POST['mesaj'] ?? 'Belirtilmedi';
 
                             echo "<tr><td class='data-label text-end pr-3'>Ad:</td><td class='ps-3'>$ad</td></tr>";
                             echo "<tr><td class='data-label text-end pr-3'>Soyad:</td><td class='ps-3'>$soyad</td></tr>";
