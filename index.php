@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Teknolojileri Projesi | Hakkında</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -31,16 +29,22 @@
     <section id="about" class="row">
         <div class="col-md-6">
             <h2>Merhaba, Ben Efe Eren Kaya</h2>
-            <p>18 yaşında Sakarya Üniversitesi Bilgisayar Mühendisliği 1. Sınıf öğrencisiyim. Bu web sitesini Web Teknolojileri dersi kapsamında geliştiriyorum.</p>
-            <h3>Hobilerim</h3>
+            <p>Sakarya Üniversitesi Bilgisayar Mühendisliği 1. Sınıf öğrencisiyim. 24 Kasım 2007 tarihinde İstanbulda doğdum. Bu web sitesini Web Teknolojileri dersi kapsamında geliştiriyorum.</p>
+            <h3>İlgi Alanlarım</h3>
             <ul>
                 <li>Müzik Dinlemek</li>
                 <li>Bilgisayar Oyunları Oynamak</li>
                 <li>Arkadaşlarımla Zaman Geçirmek</li>
             </ul>
+            <h3>Üye Olduğum Kulüpler</h3>
+            <ul>
+                <li>Bilgisayar Mühendisliği Kulübü</li>
+                <li>Sinema Kulübü</li>
+                <li>ESN Kulübü</li>
+            </ul>
         </div>
         <div class="col-md-6">
-            <img src="img/Vesikalık.jpeg" id="Vesikalık" class="img-fluid rounded" alt="Profil Resmi">
+            <img src="img/Vesikalık.jpeg" id="Vesikalık" class="rounded shadow" alt="Profil Resmi" style="width: 350px !important; height: auto !important; object-fit: cover;">
         </div>
     </section>
 </main>
