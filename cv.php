@@ -9,16 +9,25 @@
 </head>
 <body class="bg-light">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.php">Web Projem</a>
-            <div class="navbar-nav">
-                <a class="nav-link" href="index.php">Ana Sayfa</a>
-                <a class="nav-link" href="ozgecmis.php">Özgeçmiş</a>
-                <a class="nav-link" href="login.php">Giriş Yap</a>
-            </div>
-        </div>
-    </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.php">Web Proje</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" href="index.php">Hakkında</a></li>
+        <li class="nav-item"><a class="nav-link active" href="cv.php">Özgeçmiş</a></li>
+        <li class="nav-item"><a class="nav-link" href="sehrim.php">Şehrim</a></li>
+        <li class="nav-item"><a class="nav-link" href="mirasimiz.php">Mirasımız</a></li>
+        <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.php">İlgi Alanlarım</a></li>
+        <li class="nav-item"><a class="nav-link" href="iletisim.php">İletişim</a></li>
+      </ul>
+        <a href="login.php" class="btn btn-outline-light btn-sm">Giriş Yap</a>
+    </div>
+  </div>
+</nav>
 
     <header class="bg-primary text-white text-center py-5">
         <div class="container">
@@ -38,7 +47,7 @@
             <div class="col-md-8">
                 <section class="card shadow-sm mb-4">
                     <div class="card-body">
-                        <h2 class="card-title h4 text-primary">Eğitim Bilgileri</h2>
+                        <h1 class="card-title h4 text-primary">Eğitim Bilgileri</h1>
                         <article>
                             <h3> Yükseköğretim </h3>
                             <ul>
@@ -50,7 +59,7 @@
                             </ul>
                             <h3> İlköğretim </h3>
                             <ul>
-                                <li> <h5>Özel Doğa İlkokulu (1. Sınıf - 8. Sınıf)</h5> </li>
+                                <li> <h5>Güneşli Doğa Koleji (1. Sınıf - 8. Sınıf)</h5> </li>                                
                             </ul>
                         </article>
                     </div>

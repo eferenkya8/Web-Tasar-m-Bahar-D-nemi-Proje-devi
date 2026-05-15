@@ -8,19 +8,23 @@
 </head>
 <body>
 
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="#">Web Proje</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-collapse nav me-auto">
+    <a class="navbar-brand fw-bold" href="index.php">Web Proje</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link active" href="index.php">Hakkında</a></li>
         <li class="nav-item"><a class="nav-link" href="cv.php">Özgeçmiş</a></li>
         <li class="nav-item"><a class="nav-link" href="sehrim.php">Şehrim</a></li>
         <li class="nav-item"><a class="nav-link" href="mirasimiz.php">Mirasımız</a></li>
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.php">İlgi Alanlarım</a></li>
         <li class="nav-item"><a class="nav-link" href="iletisim.php">İletişim</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
       </ul>
+        <a href="login.php" class="btn btn-outline-light btn-sm">Giriş Yap</a>
     </div>
   </div>
 </nav>

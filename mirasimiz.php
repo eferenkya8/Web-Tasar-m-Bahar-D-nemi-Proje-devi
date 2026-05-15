@@ -17,7 +17,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="index.php">Web Proje</a>
+    <a class="navbar-brand fw-bold" href="index.php">Web Proje</a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto">
         <li class="nav-item"><a class="nav-link" href="index.php">Hakkında</a></li>
@@ -27,6 +27,7 @@
         <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.php">İlgi Alanlarım</a></li>
         <li class="nav-item"><a class="nav-link" href="iletisim.php">İletişim</a></li>
       </ul>
+            <a href="login.php" class="btn btn-outline-light btn-sm">Giriş Yap</a>
     </div>
   </div>
 </nav>
